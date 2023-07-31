@@ -16,7 +16,7 @@ janela.wm_iconbitmap('wartale.ico')
 lst = list()
 total_rows = 1
 total_columns = 1
-
+atrib = ['EXP','ABS','ATK']
 
 def lista():
     global lst
@@ -57,6 +57,10 @@ class Table:
 
 
 def food(x=''):
+    x= x.strip().upper()
+    if x == '' or x not in atrib:
+        messagebox.showerror('ERRO','Digite um atributo válido')
+
     global dict, atributo, total_rows, total_columns
     atributo = x.upper()
 
@@ -80,7 +84,7 @@ def food(x=''):
             resp = Table(f1)
 
     except:
-        messagebox.showerror('ERRO','Atributo não reconhecido, tente novamente!')
+        messagebox.showerror('ERRO', 'Atributo não reconhecido, tente novamente!')
 
 
 f0 = ctk.CTkFrame(janela, bg_color='#000000', fg_color='#000000')
@@ -93,21 +97,12 @@ texto1.grid(row=0, column=0, padx=2, pady=10)
 etexto = ctk.CTkEntry(f0, width=200, corner_radius=100, bg_color='#000000')
 etexto.grid(row=0, column=1, padx=2, pady=10)
 
-button = ctk.CTkButton(f0,width=200, text='Buscar', hover_color='red',corner_radius=100, bg_color='#000000',
+button = ctk.CTkButton(f0,width=200, text='Buscar', hover_color='red',  corner_radius=100, bg_color='#000000',
                        command=lambda: food(etexto.get()))
 button.grid(row=0, column=2, padx=2, pady=10)
 
 f1 = ctk.CTkFrame(janela, bg_color='#000000', fg_color='#000000')
 f1.grid(row=2, column=0, columnspan=total_columns, rowspan=total_rows)
-
-janela.mainloop()
-
-
-
-
-
-
-
 
 
 janela.mainloop()
