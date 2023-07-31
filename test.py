@@ -21,11 +21,14 @@ total_columns = 1
 def lista():
     global lst
     if atributo == 'EXP':
-        lst =[('Beer', '2-Trigos', '2-Mardanos', '', ''),
-       ('Beer', '2-Trigos', '2-Etheroot', '', ''),
-       ('Fish Roll', '2-Trigos', '1-Alga', '1-Peixe', ''),
-       ('Thalon Wine', '2-Trigos', '2-Miragewort', '', ''),
-       ('Wyzen Mead', '2-Trigos', '2-Royaljelly', '', '')]
+        lst = [('Nut Crusted Fish', '2-Ambernut', '2-Lemodine', '', ''),
+       ('Nut Crusted Fish', '2-Ambernut', '2-Abysscarp', '', ''),
+       ('Rossted Ambernut', '4-Ambernut', '', '', ''),
+       ('Steamed fish', '4-Lemodine', '', '', ''),
+       ('Steamed fish', '4-Abysscarp', '', '', ''),
+       ('Glazed fish', '2-Royaljelly', '2-Lemodine', '', ''),
+       ('Glazed fish', '2-Royaljelly', '2-Claret', '', '')]
+
 
 
 class Table:

@@ -21,18 +21,32 @@ total_columns = 1
 def lista():
     global lst
     if atributo == 'EXP':
-        lst =[('Beer', '2-Trigos', '2-Mardanos', '', ''),
+        lst = [('Beer', '2-Trigos', '2-Mardanos', '', ''),
        ('Beer', '2-Trigos', '2-Etheroot', '', ''),
        ('Fish Roll', '2-Trigos', '1-Alga', '1-Peixe', ''),
        ('Thalon Wine', '2-Trigos', '2-Miragewort', '', ''),
        ('Wyzen Mead', '2-Trigos', '2-Royaljelly', '', '')]
 
+    if atributo == 'ATK':
+        lst = [('Nut Crusted Fish', '2-Ambernut', '2-Lemodine', '', ''),
+       ('Nut Crusted Fish', '2-Ambernut', '2-Abysscarp', '', ''),
+       ('Rossted Ambernut', '4-Ambernut', '', '', ''),
+       ('Steamed fish', '4-Lemodine', '', '', ''),
+       ('Steamed fish', '4-Abysscarp', '', '', ''),
+       ('Glazed fish', '2-Royaljelly', '2-Lemodine', '', ''),
+       ('Glazed fish', '2-Royaljelly', '2-Claret', '', '')]
+
+    if atributo == 'ABS':
+        lst = [('Carrot stew', '2-Milk', '2-Carrot', '', ''),
+               ('Bread', '2-Ambernut', '2-Trigos', '', ''),
+               ('Bread', '4-Trigos', '', '', ''),
+               ('Bread', '1-Ambernut', '1-Milk', '2-Trigos', ''),
+               ('Bread', '2-Buttler', '2-Trigos', '', '')]
 
 class Table:
 
     def __init__(self, f1):
 
-        # code for creating table
         for i in range(total_rows):
             for j in range(total_columns):
                 self.e = Entry(f1, width=15, fg='#091174',bg='#c4c8c5',
@@ -41,12 +55,25 @@ class Table:
                 self.e.grid(row=i+2, column=j, padx=2, pady=5)
                 self.e.insert(END, lst[i][j])
 
+
 def food(x=''):
     global dict, atributo, total_rows, total_columns
     atributo = x.upper()
 
     try:
         if atributo == "EXP":
+            lista()
+            total_rows = len(lst)
+            total_columns = len(lst[0])
+            resp = Table(f1)
+
+        if atributo == 'ATK':
+            lista()
+            total_rows = len(lst)
+            total_columns = len(lst[0])
+            resp = Table(f1)
+
+        if atributo == 'ABS':
             lista()
             total_rows = len(lst)
             total_columns = len(lst[0])
