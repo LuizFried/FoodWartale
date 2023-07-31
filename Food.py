@@ -9,7 +9,10 @@ janela = tk.Tk()
 janela.title('Wartale Foods')
 janela.geometry('580x300')
 janela.configure(background='#000000')
-janela.resizable(True,True)
+bg = PhotoImage(file = "imagemdefundo.png")
+label1 = Label(janela, image = bg)
+label1.place(x=0, y=0)
+janela.resizable(False,False)
 janela.wm_iconbitmap('wartale.ico')
 
 
@@ -87,22 +90,22 @@ def food(x=''):
         messagebox.showerror('ERRO', 'Atributo não reconhecido, tente novamente!')
 
 
-f0 = ctk.CTkFrame(janela, bg_color='#000000', fg_color='#000000')
-f0.grid(row=0, column=0, columnspan=3)
+f0 = tk.Frame(janela,background='#a0ded6')
+f0.grid(row=0, column=0, columnspan=3,padx=10, pady=10)
 
-texto1 = ctk.CTkLabel(f0, text='Atributo:',width=150, corner_radius=100,fg_color='#091174',text_color='white',
-                      bg_color='#000000')
+texto1 = ctk.CTkLabel(f0, text='Atributo:',width=150, corner_radius=100,fg_color='black',text_color='white',
+                      bg_color='#a0ded6', font=('Arial', 14, 'bold'))
 texto1.grid(row=0, column=0, padx=2, pady=10)
 
-etexto = ctk.CTkEntry(f0, width=200, corner_radius=100, bg_color='#000000')
+etexto = ctk.CTkEntry(f0, width=200, corner_radius=100, bg_color='#a0ded6',font=('Arial', 14, 'bold'))
 etexto.grid(row=0, column=1, padx=2, pady=10)
 
-button = ctk.CTkButton(f0,width=200, text='Buscar', hover_color='red',  corner_radius=100, bg_color='#000000',
-                       command=lambda: food(etexto.get()))
+button = ctk.CTkButton(f0,width=150, text='Buscar', hover_color='red',  corner_radius=10, bg_color='#a0ded6',
+                       command=lambda: food(etexto.get()),font=('Arial', 14, 'bold'))
 button.grid(row=0, column=2, padx=2, pady=10)
 
-f1 = ctk.CTkFrame(janela, bg_color='#000000', fg_color='#000000')
-f1.grid(row=2, column=0, columnspan=total_columns, rowspan=total_rows)
+f1 = tk.Frame(janela)
+f1.grid(row=2, column=0,columnspan=total_columns, rowspan=total_rows)
 
 
 janela.mainloop()
