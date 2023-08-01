@@ -7,7 +7,7 @@ from tkinter import messagebox
 
 janela = tk.Tk()
 janela.title('Wartale Foods')
-janela.geometry('580x300')
+janela.geometry('590x300')
 janela.configure(background='#000000')
 bg = PhotoImage(file = "imagemdefundo.png")
 label1 = Label(janela, image = bg)
@@ -90,6 +90,10 @@ def food(x=''):
         messagebox.showerror('ERRO', 'Atributo não reconhecido, tente novamente!')
 
 
+def ajuda():
+    messagebox.showinfo('Atributos', 'Os atributos atuais do app são: ABS, EXP e ATK')
+
+
 f0 = tk.Frame(janela,background='#a0ded6')
 f0.grid(row=0, column=0, columnspan=3,padx=10, pady=10)
 
@@ -103,6 +107,10 @@ etexto.grid(row=0, column=1, padx=2, pady=10)
 button = ctk.CTkButton(f0,width=150, text='Buscar', hover_color='red',  corner_radius=10, bg_color='#a0ded6',
                        command=lambda: food(etexto.get()),font=('Arial', 14, 'bold'))
 button.grid(row=0, column=2, padx=2, pady=10)
+
+button_help = ctk.CTkButton(f0,text='Help', hover_color='red',  corner_radius=10, bg_color='#a0ded6',
+                            font=('Arial', 14, 'bold'), command=lambda: ajuda(), width=25)
+button_help.grid(row=0,column=3, padx=2, pady=10)
 
 f1 = tk.Frame(janela)
 f1.grid(row=2, column=0,columnspan=total_columns, rowspan=total_rows)
