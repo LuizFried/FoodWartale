@@ -55,7 +55,7 @@ class Table:
                 self.e = Entry(f1, width=15, fg='#091174',bg='#c4c8c5',
                                font=('Arial', 10, 'bold'))
 
-                self.e.grid(row=i+2, column=j, padx=2, pady=5)
+                self.e.grid(row=i+2, column=j, padx=3, pady=5)
                 self.e.insert(END, lst[i][j])
 
 
