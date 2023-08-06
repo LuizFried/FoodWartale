@@ -108,8 +108,8 @@ button = ctk.CTkButton(f0,width=150, text='Buscar', hover_color='red',  corner_r
                        command=lambda: food(etexto.get()),font=('Arial', 14, 'bold'))
 button.grid(row=0, column=2, padx=2, pady=10)
 
-button_help = ctk.CTkButton(f0,text='Help', hover_color='red',  corner_radius=10, bg_color='#a0ded6',
-                            font=('Arial', 14, 'bold'), command=lambda: ajuda(), width=25)
+button_help = ctk.CTkButton(f0, text='Help', hover_color='red',  corner_radius=10, bg_color='#a0ded6',
+                            font=('Arial', 14, 'bold'), command=lambda: ajuda(), width=25, fg_color='green')
 button_help.grid(row=0,column=3, padx=2, pady=10)
 
 f1 = tk.Frame(janela)
