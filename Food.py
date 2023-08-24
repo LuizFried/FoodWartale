@@ -12,7 +12,7 @@ janela.configure(background='#000000')
 bg = PhotoImage(file = "imagemdefundo.png")
 label1 = Label(janela, image = bg)
 label1.place(x=0, y=0)
-janela.resizable(False,False)
+janela.resizable(True,True)
 janela.wm_iconbitmap('wartale.ico')
 
 
@@ -30,7 +30,7 @@ def lista():
        ('Thalon Wine', '2-Trigos', '2-Miragewort', '', ''),
        ('Wyzen Mead', '2-Trigos', '2-Royaljelly', '', '')]
 
-    if atributo == 'ATK':
+    elif atributo == 'ATK':
         lst = [('Nut Crusted Fish', '2-Ambernut', '2-Lemodine', '', ''),
        ('Nut Crusted Fish', '2-Ambernut', '2-Abysscarp', '', ''),
        ('Rossted Ambernut', '4-Ambernut', '', '', ''),
@@ -39,7 +39,7 @@ def lista():
        ('Glazed fish', '2-Royaljelly', '2-Lemodine', '', ''),
        ('Glazed fish', '2-Royaljelly', '2-Claret', '', '')]
 
-    if atributo == 'ABS':
+    elif atributo == 'ABS':
         lst = [('Carrot stew', '2-Milk', '2-Carrot', '', ''),
                ('Bread', '2-Ambernut', '2-Trigos', '', ''),
                ('Bread', '4-Trigos', '', '', ''),
