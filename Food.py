@@ -74,13 +74,13 @@ def food(x=''):
             total_columns = len(lst[0])
             resp = Table(f1)
 
-        if atributo == 'ATK':
+        elif atributo == 'ATK':
             lista()
             total_rows = len(lst)
             total_columns = len(lst[0])
             resp = Table(f1)
 
-        if atributo == 'ABS':
+        elif atributo == 'ABS':
             lista()
             total_rows = len(lst)
             total_columns = len(lst[0])
